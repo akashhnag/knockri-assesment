@@ -3,16 +3,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Procedures to run the app:
 
 1) First of all clone the repo.
-2) run "npm install" to install all necessary packages essentials for the app.
-3) run "npm start", and we are good to go.
-Imp: Please run the "json server" before running this app.
-4) In the home page there will be a list of candidate details.
-5) You can search a candidate by their name.
-6) Click on "Profile" button to take you to their profile.
-7) The profile page has select option to choose from a wide range of questions, select any one of them.
-8) Below it plays the video related to that particular question.
-9) You can write some comments and save it.
-10) In case there is no application id assigned to a candidate and you go to his/her profile, appropriate
+2) Please run the "json server" before running this app.
+3) In "config.js" please set the URL and port for the "json server".
+4) run "npm install" to install all necessary packages essentials for the app.
+5) run "npm start", and we are good to go.
+6) In the home page there will be a list of candidate details.
+7) You can search a candidate by their name.
+8) Click on "Profile" button to take you to their profile.
+9) The profile page has select option to choose from a wide range of questions, select any one of them.
+10) Below it plays the video related to that particular question.
+11) You can write some comments and save it.
+12) In case there is no application id assigned to a candidate and you go to his/her profile, appropriate
 message is displayed on the screen.
 
 Technologies used:

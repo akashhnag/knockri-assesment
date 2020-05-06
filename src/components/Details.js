@@ -3,8 +3,8 @@ import {Form, Container, Row,Col} from "react-bootstrap";
 import axios from "axios";
 
 import Comment from "./Comment";
+import {ajaxAPI} from "../config";
 
-export const context=React.createContext();
 
 function Details(props) {
     const[details,setDetails]=useState({});
@@ -89,7 +89,7 @@ function Details(props) {
 
     useEffect(()=>{
         //get videos
-        axios.get("http://localhost:3010/applications").then((res)=>{
+        axios.get(`${ajaxAPI}applications`).then((res)=>{
             if(id){
                 for(let i=0;i<res.data.length;i++){                    
                     if(id===res.data[i].id){
@@ -101,7 +101,7 @@ function Details(props) {
         })
 
         //get questions
-        axios.get("http://localhost:3010/questions").then((res)=>{
+        axios.get(`${ajaxAPI}questions`).then((res)=>{
             getAllQuestion(res.data);            
         })
     },[id])

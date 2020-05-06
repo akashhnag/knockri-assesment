@@ -1,0 +1,1 @@
+export const ajaxAPI="http://localhost:3010/";

@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Search from "./Search";
 import Cards from "./Cards";
-
+import {ajaxAPI} from "../config";
 
 
 function toMatrix(arr, width) {
@@ -20,7 +20,7 @@ function Home() {
 
     useEffect(()=>{
         //get all candidates
-        axios.get("http://localhost:3010/candidates").then((res)=>{
+        axios.get(`${ajaxAPI}candidates`).then((res)=>{
             setCandidates(toMatrix(res.data,3));
         })
     },[])
