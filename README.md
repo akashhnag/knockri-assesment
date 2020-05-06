@@ -1,68 +1,42 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Procedures to run the app:
 
-In the project directory, you can run:
+1) First of all clone the repo.
+2) run "npm install" to install all necessary packages essentials for the app.
+3) run "npm start", and we are good to go.
+Imp: Please run the "json server" before running this app.
+4) In the home page there will be a list of candidate details.
+5) You can search a candidate by their name.
+6) Click on "Profile" button to take you to their profile.
+7) The profile page has select option to choose from a wide range of questions, select any one of them.
+8) Below it plays the video related to that particular question.
+9) You can write some comments and save it.
+10) In case there is no application id assigned to a candidate and you go to his/her profile, appropriate
+message is displayed on the screen.
 
-### `npm start`
+Technologies used:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1) The project uses react's create-react-app to setup an execute the app.
+2) It has been done using react's functional component and hooks.
+3) I didn't felt the need of external state management tool like redux. So it just uses transfer of data via
+props from one component to other. Use of redux would have made this fairly simple project more complicated.
+4) The npm packages used are:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+i) axios: To make AJAX calls.
+ii) bootstrap and react-bootstrap: for looks and styling.
+iii) react-router-dom: for react routing.
 
-### `npm test`
+5) I have used an image to serve as profile avatar of the candidate.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Improvements:
 
-### `npm run build`
+1) There are some logs and warnings regarding react-bootstrap which I would have liked to address.
+2) I wish I could test cases and assertions.
+3) The project is not the best structured, it could have been more modularized.
+4) I was confused about saving the comments to "api.json" file. So, the "save" button downloads a file called
+"api.json" with every details asked for.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Some additional features:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1) I have added an additional feature, a search box to filter candidates by their name.
