@@ -8,11 +8,11 @@ function Search(props) {
 
     return (
         <div style={{marginTop:"50px"}}>
-            <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+            <div className="input-group mb-3">
+            <div className="input-group-prepend">
+                <span className="input-group-text" id="inputGroup-sizing-default">Search</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" 
+            <input type="text" className="form-control" aria-label="Default" 
             aria-describedby="inputGroup-sizing-default" onChange={handleInput}></input>
             </div>
         </div>

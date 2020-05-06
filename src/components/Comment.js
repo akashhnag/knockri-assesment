@@ -1,68 +1,38 @@
 import React,{useState} from 'react'
 import {Form,Button} from "react-bootstrap";
+import axios from "axios";
 
-let finalArr=[];
+import {ajaxAPI} from "../config";
 
 function Comment(props) {
     const[comment,setComment]=useState("");
 
     let data={id:"",videos:[]};
 
-    function find(final,id){
-        for(let i=0;i<final.length;i++){
-            if(final[i].id===id){
-                return {"decision":true,"i":i};
-            }
-        }
-        return {"decision":false};
-    }
-
-    function findVideos(arr,id){
-        for(let i=0;i<arr.length;i++){
-            if(arr[i].questionId===id){
-                return {"decision":true,"i":i};
-            }
-        }
-        return {"decision":false};
-    }
-    
-    //to download json file
-    function download(content, fileName, contentType) {
-        var a = document.createElement("a");
-        var file = new Blob([JSON.stringify(content, null, 2)], {type: contentType});
-        a.href = URL.createObjectURL(file);
-        a.download = fileName;
-        a.click();
-    }
-
     //action on clicking save button
     function handleClick(){
-        let {result}=props;
-        result.videoDetails.comments=comment;
-        
-        if(finalArr.length===0){
-            data.id=result.id;
-            data.videos.push(JSON.parse(JSON.stringify(result.videoDetails)));
-            finalArr.push(data);
-            
-        }else{
-            let check=find(finalArr,result.id);
-            if(check.decision){
-                let getVideos=findVideos(finalArr[check["i"]].videos,result.videoDetails.questionId);
-                if(getVideos.decision){
-                    finalArr[check["i"]].videos[getVideos["i"]].comments=result.videoDetails.comments;
-                }else{
-                    finalArr[check["i"]].videos.push(result.videoDetails);
-                }
-            }else{
+        let {result}=props;  
+        for(let i=0;i<result.videos.length;i++){
+            if(result.currentQuestion===result.videos[i].questionId){
                 data.id=result.id;
-                data.videos.push(JSON.parse(JSON.stringify(result.videoDetails)));
-                finalArr.push(data);
+                result.videos[i].comments=comment.trim();
+                data.videos=result.videos;
+                break;
             }
-        }
+        } 
         
         setComment("");
-        download(finalArr, 'api.json', 'text/json');
+        axios.put(`${ajaxAPI}applications/${data.id}`,data).then((res)=>{
+            if(res.status===200){
+                alert("Comments Saved");
+            }else{
+                alert("Error!!! Comments not saved.")
+            }
+            
+        }).catch((err)=>{
+            console.log("err",err);
+            
+        })
     }
 
     //comment box action

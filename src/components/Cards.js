@@ -14,13 +14,10 @@ function Cards(props) {
                 
                      <Card.Body> 
                     <Row>
-                    <Col sm={8}>                                       
-                         <Card.Text>
-                             <p><b>Name:</b> {ele.name}</p>
-                             <p><b>Id:</b> {ele.id}</p>
-                             <p><b>Application Id:</b> {ele.applicationId}</p>
-                         </Card.Text>
-                
+                    <Col sm={8}>   
+                        <p><b>Name:</b> {ele.name}</p>
+                        <p><b>Id:</b> {ele.id}</p>
+                        <p><b>Application Id:</b> {ele.applicationId}</p>   
                          <Link to={`details/:${ele.applicationId}`}>
                              <Button variant="primary" id={ele.id}>Profile</Button>
                          </Link>  

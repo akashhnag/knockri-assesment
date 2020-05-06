@@ -5,20 +5,22 @@ import axios from "axios";
 import Comment from "./Comment";
 import {ajaxAPI} from "../config";
 
+let result={currentQuestion:0,id:0,videos:[]};
 
 function Details(props) {
     const[details,setDetails]=useState({});
     const[allQuestions,getAllQuestion]=useState([]);
     const[video,setVideo]=useState({});
-    
+
     const individualQuestions=[];
-    let result={};
+    
     let id=parseInt(props.location.pathname.split(":")[1]);
 
     //select box action
     function handleChange(e){
         let qid=e.target.value;
         let videos=details.videos;
+        result.currentQuestion=parseInt(qid); 
         
         for(let i=0;i<videos.length;i++){
             if(parseInt(qid)===videos[i].questionId){
@@ -46,7 +48,8 @@ function Details(props) {
         }else{            
             if(allQuestions.length>0){
                 result.id=details.id;
-                result.videoDetails=video;
+                result.videos=details.videos;
+                
                 for(let i=0;i<allQuestions.length;i++){
                     for(let j=0;j<details.videos.length;j++){
                         if(allQuestions[i].id===details.videos[j].questionId){
@@ -54,9 +57,9 @@ function Details(props) {
                             break;
                         }
                     }
-                }  
-
-                //render select options and videp player
+                } 
+                
+                //render select options and video player
                 return(
                     <div>
                         <Form>
@@ -94,9 +97,11 @@ function Details(props) {
                 for(let i=0;i<res.data.length;i++){                    
                     if(id===res.data[i].id){
                         setDetails(res.data[i]); 
-                        setVideo(res.data[i].videos[0])                                             
+                        setVideo(res.data[i].videos[0]); 
+                        result.currentQuestion=res.data[i].videos[0].questionId;                                   
                     }
                 }
+                
             }         
         })
 

@@ -40,7 +40,7 @@ function Home() {
                            return ele1.name.toLowerCase().indexOf(searchWord.toLowerCase())>=0
                        }).map((ele2,ind2)=>{
                            return(
-                            <Cards ele={ele2} ind={ind2} width={"auto"}></Cards>                            
+                            <Cards ele={ele2} ind={ind2} width={"auto"} key={ele2.id}></Cards>                            
                            )
                        })}
                     </Row>
@@ -56,7 +56,7 @@ function Home() {
             <Row key={ind}>{
                 ele.map((ele1,ind1)=>{
                     return(
-                        <Cards ele={ele1} ind={ind1} width={"80px"}></Cards>                                       
+                        <Cards ele={ele1} ind={ind1} width={"80px"} key={ele1.id}></Cards>                                       
                     )
                 })
                                                             

@@ -8,7 +8,7 @@ function MyNavbar() {
         <div>
              <Navbar bg="dark" variant="dark">
              <Link to="/">
-              <Navbar.Brand href="#home">Candidate Selection</Navbar.Brand>
+              <Navbar.Brand>Candidate Selection</Navbar.Brand>
              </Link>
              
               <Nav className="mr-auto">
