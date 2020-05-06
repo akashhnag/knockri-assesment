@@ -36,7 +36,7 @@ Improvements:
 2) I wish I could test cases and assertions.
 3) The project is not the best structured, it could have been more modularized.
 4) I was confused about saving the comments to "api.json" file. So, the "save" button downloads a file called
-"api.json" with every details asked for.
+"api.json" with every details asked for.(Problem resolved)
 
 Some additional features:
 
